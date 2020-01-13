@@ -1,4 +1,4 @@
-public class Assignment {
+public class HomeworkTwo {
   
   public static void main(String[] args) { 
 	  
