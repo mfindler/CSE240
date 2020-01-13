@@ -33,7 +33,7 @@ public class Assignment {
         System.out.println ("A student " + data.getFirstName() + " " + data.getLastName() + " is not assigned to a seat."); 
       } else { 
         if (classroom.setStudentAt(row,col,data) == true){ 
-          System.out.println("\n The seat at row " + row + " and column " + col + " is assigned to the student " + tempStudent.toString()); 
+          System.out.println("\n The seat at row " + row + " and column " + col + " is assigned to " + data.toString()); 
           System.out.println(classroom); 
         } else { 
           System.out.println("\n The seat at row " + row + " and column " + col + " is taken."); 
