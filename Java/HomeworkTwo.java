@@ -1,69 +1,50 @@
 public class Assignment {
-   public static void main(String[] args) { 
-    ExaminationSeating examinationSeating; 
-    Student tempStudent;
-     int row, col, rowNum, columnNum; 
-    String studentInfo; 
+  
+  public static void main(String[] args) { 
+	  
+    Classroom classroom; 
+    Student data;
+    int row, col, rowNum, columnNum; 
+    String info; 
     Scanner scan = new Scanner(System.in); 
-    // Ask a user to enter a number of rows for a examination seating    
-    System.out.println 
-    ("Please enter a number of rows for a examination seating."); 
-    rowNum = scan.nextInt(); 
     
-    // Ask a user to enter a number of columns for a examination seating   
-    System.out.println 
-    ("Please enter a number of columns for a examination seating.");   
+    System.out.println ("How many rows do you want?"); 
+    rowNum = scan.nextInt(); 
+      
+    System.out.println ("How many columns do you want?");   
     columnNum = scan.nextInt(); 
 
-    // instantiate a ExaminationSeating object 
-    examinationSeating = new ExaminationSeating(rowNum, columnNum); 
+    classroom = new Classroom(rowNum, columnNum); 
     
-    System.out.println 
-    ("Please enter a student information or enter \"Q\" to quit.");
-    /### reading a student's information ###/ 
-    studentInfo = scan.next(); 
-    /# we will read line by line ##/ 
+    System.out.println ("Capture a student information (name/lastname) or enter \"Q\" to quit.");
+    info = scan.next(); 
+
     while (!studentInfo.equalsIgnoreCase("Q")){ 
-      System.out.println("\nA student information is read."); 
-      // printing information read from a file. 
-      System.out.println(studentInfo); 
 
-      // creating a student object using the student information from a user 
-      tempStudent = new Student(studentInfo); 
+      data = new Student(studentInfo); 
 
-      // Ask a user to decide where to seat a student by asking 
-      // for row and column of a seat 
-      System.out.println 
-      ("Please enter a row number where the student wants to sit."); row =        
-      scan.nextInt(); 
-
-      System.out.println 
-      ("Please enter a column number where the student wants to sit."); 
+      System.out.println ("Capture the row number where the student wants to sit: "); 
+      row = scan.nextInt(); 
+      System.out.println ("Capture the column number where the student wants to sit:"); 
       col = scan.nextInt(); 
 			
-	      // Checking if the row number and column number are valid  
-			// (exist in the examination that we created.)  
-      if (examinationSeating.checkBoundaries(row, col) == false) { 
-        System.out.println("\nrow or column number is not valid.");    
-        System.out.println ("A student " + tempStudent.getFirstName() + 
-          " " + tempStudent.getLastName() + " is not assigned a seat."); 
+      if (classroom.isValid(row, col) == false) { 
+        System.out.println("\n row or column number is not valid.");    
+        System.out.println ("A student " + data.getFirstName() + " " + data.getLastName() + " is not assigned to a seat."); 
       } else { 
-        // Assigning a seat for a student 
-        if (examinationSeating.assignStudentAt(row,col,tempStudent) == true){ 
-          System.out.println("\nThe seat at row " + row + " and column " + 
-          col + " is assigned to the student " + tempStudent.toString()); 
-          System.out.println(examinationSeating); 
+        if (classroom.setStudentAt(row,col,data) == true){ 
+          System.out.println("\n The seat at row " + row + " and column " + col + " is assigned to the student " + tempStudent.toString()); 
+          System.out.println(classroom); 
         } else { 
-          System.out.println("\nThe seat at row " + row + " and column " + 
-          col + " is taken."); 
+          System.out.println("\n The seat at row " + row + " and column " + col + " is taken."); 
         } 
       } 
+	    
       // Read the next studentInfo 
-      System.out.println 
-        ("Please enter a student information or enter \"Q\" to quit."); 
-      /### reading a student's information ###/ 
+      System.out.println ("Capture a student information (name/lastname) or enter \"Q\" to quit.");
       studentInfo = scan.next(); 
     }
     Scan.close(); 
   } 
+	
 } 
