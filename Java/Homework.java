@@ -4,7 +4,7 @@ public class Homework {
 
     char [] a = {'a', 'b', 'c', 'd', 'x', 'y', '1', '2', '3', '4'};  
     char [] b = {'p', 'q', '9', '8' ,'7', '6'}; 
-    int [] c = {6, 0, 1};
+    int  [] c = {6, 0, 1};
 
 	  // Testing initializeArray
 	  printArray(a);
