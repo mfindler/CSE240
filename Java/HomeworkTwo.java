@@ -19,20 +19,20 @@ public class Assignment {
     System.out.println ("Capture a student information (name/lastname) or enter \"Q\" to quit.");
     info = scan.next(); 
 
-    while (!studentInfo.equalsIgnoreCase("Q")){ 
+    while (!info.equalsIgnoreCase("Q")){ 
 
       data = new Student(studentInfo); 
 
       System.out.println ("Capture the row number where the student wants to sit: "); 
       row = scan.nextInt(); 
-      System.out.println ("Capture the column number where the student wants to sit:"); 
+      System.out.println ("Capture the column number where the student wants to sit: "); 
       col = scan.nextInt(); 
 			
       if (classroom.isValid(row, col) == false) { 
         System.out.println("\n row or column number is not valid.");    
         System.out.println ("A student " + data.getFirstName() + " " + data.getLastName() + " is not assigned to a seat."); 
       } else { 
-        if (classroom.setStudentAt(row,col,data) == true){ 
+        if (classroom.setStudentAt(row, col, data) == true){ 
           System.out.println("\n The seat at row " + row + " and column " + col + " is assigned to " + data.toString()); 
           System.out.println(classroom); 
         } else { 
@@ -42,10 +42,10 @@ public class Assignment {
 	    
       // Read the next studentInfo 
       System.out.println ("Capture a student information (name/lastname) or enter \"Q\" to quit.");
-      studentInfo = scan.next(); 
+      info = scan.next(); 
     }
 	  
-    Scan.close(); 
+    scan.close(); 
   } 
 	
 } 
