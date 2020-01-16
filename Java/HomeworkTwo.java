@@ -39,8 +39,7 @@ public class HomeworkTwo {
           System.out.println("\n The seat at row " + row + " and column " + col + " is taken."); 
         } 
       } 
-	    
-      // Read the next studentInfo 
+
       System.out.println ("Capture a student information (name/lastname) or enter \"Q\" to quit.");
       info = scan.next(); 
     }
