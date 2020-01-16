@@ -21,7 +21,7 @@ public class HomeworkTwo {
 
     while (!info.equalsIgnoreCase("Q")){ 
 
-      data = new Student(studentInfo); 
+      data = new Student(info); 
 
       System.out.println ("Capture the row number where the student wants to sit: "); 
       row = scan.nextInt(); 
