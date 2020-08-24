@@ -18,8 +18,8 @@ public class Homework {
 
     // Testing factorial
     System.out.println ( factorial (5) );
-    System.out.println ( factorial (c[0] );
-    System.out.println ( factorial (c[2] );
+    System.out.println ( factorial ( c[0] ) );
+    System.out.println ( factorial ( c[2] ) );
   }
   
 }
